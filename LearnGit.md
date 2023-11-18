@@ -53,3 +53,47 @@ HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历�
     git checkout -- <file>
 #### 7.3 撤销版本库的修改
     git reset --hard HEAD^
+
+### 8. 删除文件
+    git rm <file>
+    git commit -m <message>
+如果删错了，可以用版本库的版本替换工作区的版本：
+    
+        git checkout -- <file>
+### 9. 远程仓库
+#### 9.1 添加远程仓库
+    git remote add origin git@github.com:<user_name>/<repositories_name>.git
+    git branch -M main
+    git push -u origin main
+#### 9.2 从远程仓库克隆
+    git clone git@github.com:<user_name>/<repositories_name>.git
+### 10. 分支管理
+#### 10.1 创建与合并分支
+创建分支：
+
+    git branch <name>
+切换分支：
+    
+    git checkout <name>
+
+创建+切换分支：
+    
+    git checkout -b <name>
+
+合并某分支到当前分支：
+        
+    git merge <name>
+
+删除分支：
+        
+    git branch -d <name>
+
+#### 10.2 新的特性:
+        
+创建并切换到新的分支：
+
+    git switch -c <name>
+    
+直接切换到已有的分支：
+
+    git switch <name>
